@@ -5,13 +5,13 @@ class UserModel extends InheritedWidget {
   final String imgAvatar;
   final String birthDate;
 
-  // ignore: prefer_const_constructors_in_immutables, use_key_in_widget_constructors
-  UserModel({
+  const UserModel({
+    super.key,
     required this.name,
     required this.imgAvatar,
     required this.birthDate,
-    required Widget child,
-  }) : super(child: child);
+    required super.child,
+  });
 
   @override
   bool updateShouldNotify(covariant UserModel oldWidget) {

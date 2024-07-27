@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class SplashPage extends StatefulWidget {
-  const SplashPage({Key? key}) : super(key: key);
+  const SplashPage({super.key});
 
   @override
   State<SplashPage> createState() => _SplashPageState();
@@ -12,9 +11,11 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance?.addPersistentFrameCallback(
+    WidgetsBinding.instance.addPostFrameCallback(
       (timeStamp) {
-        Navigator.of(context).pushReplacementNamed('/home');
+        if (mounted) {
+          Navigator.of(context).pushReplacementNamed('/home');
+        }
       },
     );
   }

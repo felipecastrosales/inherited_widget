@@ -9,14 +9,13 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return UserModel(
       name: 'Cristiano Ronaldo',
-      imgAvatar:
-          'assets/i.png',
+      imgAvatar: 'assets/i.png',
       birthDate: '05/02/1985',
       child: MaterialApp(
         title: 'Inherited Widget',

@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:inherited_widget/model/user_model.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     var user = UserModel.of(context);
+    final textTheme = Theme.of(context).textTheme;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home'),
@@ -25,11 +27,11 @@ class HomePage extends StatelessWidget {
             children: [
               Text(
                 user.name,
-                style: Theme.of(context).textTheme.subtitle2,
+                style: textTheme.titleSmall,
               ),
               Text(
                 user.birthDate,
-                style: Theme.of(context).textTheme.overline,
+                style: textTheme.labelSmall,
               ),
             ],
           ),
